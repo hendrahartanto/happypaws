@@ -1,0 +1,27 @@
+.hotels-page {
+  padding-top: 56px;
+}
+
+.hotels-page .side-section {
+  z-index: 0;
+  top: 0;
+  position: absolute;
+  height: 100vh;
+  width: 400px;
+  display: flex;
+  padding-bottom: 40px;
+  padding-top: 96px;
+  box-sizing: border-box;
+}
+
+.hotels-page .side-container {
+  border-radius: 5px;
+  background-color: var(--background-color);
+  height: 100%;
+  width: 100%;
+}
+
+.hotels-section .hotels-container {
+  margin-top: 40px;
+  margin-left: 450px;
+}

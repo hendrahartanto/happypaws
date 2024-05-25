@@ -1,0 +1,56 @@
+.sidebar {
+	box-sizing: border-box;
+	padding: 15px 10px;
+	transition: 0.3s;
+	left: 0;
+	top: 0;
+	position: absolute;
+	background-color: var(--background-color);
+	height: 100vh;
+	width: 300px;
+	transform: translateX(-100%);
+}
+
+.sidebar.open {
+	transform: translateX(0%);
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: none;
+}
+
+.overlay.open {
+	display: block;
+}
+
+.sidebar .content {
+	border-radius: 5px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.sidebar .menu:hover {
+	background-color: var(--primary-hover-color);
+}
+
+.sidebar .menu {
+	padding: 15px;
+	border-radius: 5px;
+	color: var(--primary-text-color);
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.sidebar .menu p {
+	margin-top: 5px;
+}

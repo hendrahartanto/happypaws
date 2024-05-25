@@ -1,0 +1,22 @@
+import "./global.css";
+import "./components/buttonLink.css";
+import "./components/navbar.css";
+import "./components/navbarDropdownMenu.css";
+import "./components/navbarmenu.css";
+import "./components/sidebar.css";
+import "./components/signNavbar.css";
+import "./components/inputForm.css";
+import "./components/selectForm.css";
+import "./components/buttonBlue.css";
+import "./components/buttonOrange.css";
+import "./components/promoCarousel.css";
+import "./components/hotelCard.css";
+import "./components/buttonRed.css";
+
+import "./pages/registerPage.css";
+import "./pages/loginPage.css";
+import "./pages/homePage.css";
+import "./pages/hotelsPage.css";
+import "./pages/hotelDetail.css";
+import "./pages/profilePage.css";
+import "./pages/cartPage.css";

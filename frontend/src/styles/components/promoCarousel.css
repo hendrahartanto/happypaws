@@ -1,0 +1,24 @@
+.promo-carousel {
+	background-color: var(--traveloka-background2);
+}
+
+.promo-carousel .header {
+	padding-top: 20px;
+	color: var(--secondary-text-color);
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.carousel-container {
+	gap: 35px;
+	overflow: hidden;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	display: flex;
+	align-items: center;
+}
+
+.carousel-container img {
+	height: 400px;
+	width: 800px;
+}

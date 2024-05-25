@@ -1,0 +1,17 @@
+.navbar-menu {
+  border-radius: 4px;
+  padding: 8px 11px;
+  gap: 7px;
+  text-decoration: none;
+  color: var(--primary-text-color);
+  display: flex;
+  align-items: center;
+}
+
+.navbar-menu p {
+  width: 100%;
+}
+
+.navbar-menu:hover {
+  background-color: var(--primary-hover-color);
+}

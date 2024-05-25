@@ -1,0 +1,15 @@
+.button-orange {
+	border-radius: 5px;
+	background-color: var(--button-secondary-color);
+	text-decoration: none;
+	color: white;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button-orange:hover {
+	background-color: var(--button-secondary-hover-color);
+}

@@ -1,0 +1,55 @@
+.input-form {
+	width: 100%;
+}
+
+.input-form p {
+	margin-bottom: 4px;
+	color: var(--input-label-color);
+}
+
+.input-form p.file {
+	margin-bottom: 4px;
+	color: var(--input-label-color);
+	text-align: center;
+}
+
+.input-form input {
+	box-sizing: border-box;
+	border: 1px solid;
+	border-radius: 3px;
+	border-color: rgb(210, 209, 209);
+	background-color: var(--background-color);
+	padding: 8px;
+	width: 100%;
+}
+
+.input-form input.file {
+	margin-top: 3px;
+	box-sizing: border-box;
+	border: 0px;
+	border-radius: 3px;
+	border-color: rgb(210, 209, 209);
+	background-color: var(--background-color);
+	padding: 0px;
+	width: 100%;
+}
+
+.input-form input.date {
+	height: 34px;
+}
+
+.input-form input.checkbox {
+	width: auto;
+}
+
+.input-form input::placeholder {
+	color: rgb(188, 188, 188);
+}
+
+.input-form input:hover {
+	border-color: rgb(82, 82, 82);
+}
+
+.input-form input:focus {
+	border-color: #1494c6;
+}

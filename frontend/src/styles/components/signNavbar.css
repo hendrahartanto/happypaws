@@ -1,0 +1,26 @@
+.sign-navbar {
+  background-color: var(--background-color);
+  position: fixed;
+  width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.sign-navbar .container {
+	display: flex;
+	gap: 10px;
+}
+
+.sign-navbar .logo {
+	font-size: 20px;
+	font-weight: bold;
+	text-decoration: none;
+	color: var(--primary-text-color);
+}
+
+.sign-navbar p {
+	font-size: 20px;
+	font-weight: bold;
+	text-decoration: none;
+	color: var(--primary-text-color);
+}

@@ -1,0 +1,42 @@
+.login-page {
+	width: 100%;
+	height: 100vh;
+	background-color: var(--traveloka-background);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login-page form {
+	border-radius: 3px;
+	width: 300px;
+	background-color: var(--background-color);
+	padding: 30px 20px;
+}
+
+.login-page .header {
+	font-size: 24px;
+	margin-bottom: 25px;
+}
+
+.login-page .top {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.login-page .separator {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	width: 100%;
+	text-align: center;
+	color: var(--input-label-color);
+}
+
+.login-page .button {
+	height: 35px;
+}
+
+.login-page .error {
+	color: rgb(224, 61, 61);
+}
