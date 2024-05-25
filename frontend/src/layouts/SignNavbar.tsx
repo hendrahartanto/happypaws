@@ -6,7 +6,7 @@ const SignNavbar = () => {
 			<div className="page-center">
 				<div className="container">
 					<Link className="logo" to="/home">
-						TraveloHI
+						Happy Paws
 					</Link>
 					<p>{location.pathname.includes("login") ? "Login" : "Register"}</p>
 				</div>

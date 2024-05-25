@@ -196,7 +196,7 @@ const Navbar: React.FC<NavbarProps> = ({ setIsDark, isDark }) => {
 							<img src={hamburgerIcon} alt="" />
 						</button>
 						<Link className="logo" to="/home">
-							TraveloHI
+							Happy Paws
 						</Link>
 						<div>Search Component</div>
 					</div>
@@ -210,9 +210,6 @@ const Navbar: React.FC<NavbarProps> = ({ setIsDark, isDark }) => {
 						{currUser == null ? (
 							<>
 								<NavbarMenu title="Login" icon={loginIcon} path="/login" />
-								<div className="register-button">
-									<ButtonLink title="Register" path="/register" />
-								</div>
 							</>
 						) : (
 							<>

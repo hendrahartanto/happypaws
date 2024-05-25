@@ -20,7 +20,7 @@
 }
 
 .flight-card:hover {
-	border: 1px solid var(--traveloka-background);
+	border: 1px solid var(--primary-background);
 }
 
 .flight-card .header {
@@ -93,7 +93,7 @@
 }
 
 .flight-card .body .destination .destination-container .seat-container .seat {
-	background-color: var(--traveloka-background);
+	background-color: var(--primary-background);
 	color: white;
 	padding: 3px 5px;
 	border-radius: 5px;

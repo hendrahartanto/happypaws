@@ -214,7 +214,7 @@
 }
 
 .item-2 .body .destination .destination-container .seat-container .seat {
-	background-color: var(--traveloka-background);
+	background-color: var(--primary-background);
 	color: white;
 	padding: 3px 5px;
 	border-radius: 5px;

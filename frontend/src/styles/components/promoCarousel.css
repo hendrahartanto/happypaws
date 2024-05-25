@@ -1,32 +1,32 @@
 .promo-carousel {
-  background-color: var(--traveloka-background2);
+	background-color: var(--primary-background2);
 }
 
 .promo-carousel .header {
-  padding-top: 20px;
-  color: var(--secondary-text-color);
-  font-size: 30px;
-  font-weight: bold;
+	padding-top: 20px;
+	color: var(--secondary-text-color);
+	font-size: 30px;
+	font-weight: bold;
 }
 
 .carousel-container {
-  position: relative;
-  height: 400px;
-  width: 100%;
+	position: relative;
+	height: 400px;
+	width: 100%;
 }
 
 .promo-carousel .image-container {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  display: none;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	display: none;
 }
 
 .promo-carousel .image-container.active {
-  display: block;
+	display: block;
 }
 
 .carousel-container img {
-  height: 100%;
-  width: 100%;
+	height: 100%;
+	width: 100%;
 }
