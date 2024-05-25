@@ -5,11 +5,22 @@ interface ButtonOrangeProps {
 	label: any;
 	onClick: any;
 	type: any;
+	disabled?: any;
 }
 
-const ButtonOrange: FC<ButtonOrangeProps> = ({ label, onClick, type }) => {
+const ButtonOrange: FC<ButtonOrangeProps> = ({
+	label,
+	onClick,
+	type,
+	disabled = false,
+}) => {
 	return (
-		<button onClick={onClick} type={type} className="button-orange">
+		<button
+			disabled={disabled}
+			onClick={onClick}
+			type={type}
+			className={`button-orange ${disabled ? "disabled" : "enabled"}`}
+		>
 			{label}
 		</button>
 	);

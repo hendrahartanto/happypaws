@@ -10,15 +10,26 @@ import hamburgerIcon from "../assets/UI/hamburger.svg";
 import loginIcon from "../assets/UI/login.svg";
 import paymentIcon from "../assets/UI/payment.svg";
 import cartIcon from "../assets/UI/cart.svg";
+import historyIcon from "../assets/UI/history.svg";
 import { useUser } from "../contexts/UserContext";
-import anonymousProfilePicture from "../assets/UI/anonymous.png";
 import useFetch from "../hooks/useFetch";
+import ButtonBlue from "../components/ButtonBlue";
+import NavbarDropdown from "./components/NavbarDropdown";
+import adminIcon from "../assets/UI/settings.svg";
+import gameIcon from "../assets/UI/game.svg";
 
-export default function Navbar() {
+interface NavbarProps {
+	isDark: any;
+	setIsDark: any;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ setIsDark, isDark }) => {
 	const { login, logout } = useUser();
-	const { data: currUser, loading: currUserloading } = useFetch(
-		`http://localhost:8080/user/validate?${location.pathname}`
-	);
+	const {
+		data: currUser,
+		loading: currUserloading,
+		refetch: currUserRefetch,
+	} = useFetch(`http://localhost:8080/user/validate?${location.pathname}`);
 
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -36,13 +47,11 @@ export default function Navbar() {
 		} else {
 			logout();
 		}
-	}, [currUser, login, logout]);
+	}, [currUser]);
 
 	if (currUserloading) {
 		return <div>Loading</div>;
 	}
-
-	console.log(currUser);
 
 	const sidebarData = [
 		{
@@ -70,7 +79,93 @@ export default function Navbar() {
 			path: "/cart",
 			icon: cartIcon,
 		},
+		{
+			title: "History",
+			path: "/history",
+			icon: historyIcon,
+		},
+		{
+			title: "Game",
+			path: "/game",
+			icon: gameIcon,
+		},
+		{
+			title: "Check Location",
+			path: "/checklocation",
+			icon: hotelIcon,
+		},
 	];
+
+	if (currUser?.role == "admin") {
+		sidebarData.push(
+			{
+				title: "User List",
+				path: "/userlist",
+				icon: loginIcon,
+			},
+			{
+				title: "Admin",
+				path: "/admin",
+				icon: adminIcon,
+			},
+			{
+				title: "Promo",
+				path: "/promo",
+				icon: myticketIcon,
+			}
+		);
+	}
+
+	const loggingOut = async () => {
+		try {
+			const response = await fetch("http://localhost:8080/user/removecookie", {
+				method: "GET",
+				credentials: "include",
+			});
+			if (response.ok) {
+				console.log("Logout successful");
+			} else {
+				console.error("Logout failed:", response.statusText);
+			}
+		} catch (error) {
+			console.error("Error during logout:");
+		}
+		logout();
+		currUserRefetch();
+	};
+
+	const creditCardIsAvailable = {
+		label: "Credit Card",
+		onClick: undefined,
+		icon: undefined,
+		description: currUser?.CreditCards[0]?.amount.toLocaleString("id-ID", {
+			style: "currency",
+			currency: "iDR",
+		}),
+	};
+
+	const paymentMethodContents = [
+		{
+			label: "HI Wallet",
+			onClick: undefined,
+			icon: undefined,
+			description: currUser?.money.toLocaleString("id-ID", {
+				style: "currency",
+				currency: "iDR",
+			}),
+		},
+	];
+
+	if (currUser?.CreditCards.length > 0) {
+		paymentMethodContents.push(creditCardIsAvailable);
+	} else {
+		paymentMethodContents.push({
+			label: "Credit Card",
+			onClick: undefined,
+			description: "Credit card is not registered",
+			icon: undefined,
+		});
+	}
 
 	return (
 		<div className="navbar">
@@ -111,14 +206,7 @@ export default function Navbar() {
 							icon={myticketIcon}
 							path="/mybooking"
 						/>
-						<NavbarMenu
-							title="My Payment Method"
-							icon={paymentIcon}
-							path="/profile"
-						/>
 						<NavbarMenu title="My Cart" icon={cartIcon} path="/cart" />
-						{/* TODO VALIDASI USER UDH LOGIN ATAU BELUM */}
-						{/* KALU BELUM */}
 						{currUser == null ? (
 							<>
 								<NavbarMenu title="Login" icon={loginIcon} path="/login" />
@@ -128,24 +216,38 @@ export default function Navbar() {
 							</>
 						) : (
 							<>
+								<NavbarDropdown
+									title="My Payment Method"
+									icon={paymentIcon}
+									contents={paymentMethodContents}
+								/>
 								<Link className="profile" to={"/profile"}>
 									<div className="profile-picture">
-										<img
-											src={
-												currUser.profilePicture == null
-													? anonymousProfilePicture
-													: currUser.profilePicture
-											}
-											alt=""
-										/>
+										<img src={currUser.profilePicture} alt="" />
 									</div>
 									<div className="profile-name">{currUser.userName}</div>
 								</Link>
+								<div className="button">
+									<ButtonBlue
+										label={"Logout"}
+										onClick={loggingOut}
+										type={"button"}
+									/>
+								</div>
 							</>
 						)}
+						<div className="button">
+							<ButtonBlue
+								label={`${isDark ? "Dark Theme" : "Light Theme"}`}
+								onClick={() => setIsDark(!isDark)}
+								type={"button"}
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	);
-}
+};
+
+export default Navbar;

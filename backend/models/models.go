@@ -9,29 +9,30 @@ import (
 type User struct {
 	gorm.Model
 	ID                 uint
-	Username           string  `json:"userName"`
-	Email              string  `json:"email"`
-	Password           string  `json:"password"`
-	DOB                string  `json:"DOB"`
-	Gender             string  `json:"gender"`
-	ProfilePicture     *string `json:"profilePicture"`
-	IsBanned           bool    `json:"isBanned"`
-	Role               string  `json:"role"`
-	IsSubscribed       bool    `json:"isSubscribed"`
-	PhoneNumber        string  `json:"phoneNumber"`
-	Address            string  `json:"address"`
-	PaymentMethod      int     `json:"paymentMethod"`
-	Money              int     `json:"money"`
+	Username           string `json:"userName"`
+	Email              string `json:"email"`
+	Password           string `json:"password"`
+	DOB                string `json:"DOB"`
+	Gender             string `json:"gender"`
+	ProfilePicture     string `json:"profilePicture"`
+	IsBanned           bool   `json:"isBanned"`
+	Role               string `json:"role"`
+	IsSubscribed       bool   `json:"isSubscribed"`
+	PhoneNumber        string `json:"phoneNumber"`
+	Address            string `json:"address"`
+	PaymentMethod      int    `json:"paymentMethod"`
+	Money              int    `json:"money"`
 	CreditCards        []CreditCard
 	Answers            []Answer
 	CartTickets        []CartTicket
 	CartHotels         []CartHotel
 	Reviews            []Review
 	TransactionTickets []TransactionTicket
+	TransactionHotel   []TransactionHotel
+	UsedPromos         []UsedPromo
 }
 
 type CreditCard struct {
-	gorm.Model
 	CardNumber string `json:"cardNumber"`
 	CVV        string `json:"cvv"`
 	Amount     int    `json:"amount"`
@@ -57,97 +58,109 @@ type City struct {
 }
 
 type Airport struct {
-	gorm.Model
-	ID          uint
-	AirportName string
+	AirportName string `gorm:"primaryKey;unique"`
 	CityID      uint
 	City        City `gorm:"foreignKey:CityID"`
-	Airline     []Airline
 }
 
 type Airline struct {
-	gorm.Model
-	ID          uint
+	ID          string `gorm:"primaryKey"`
 	AirlineName string
-	AirportID   uint
-	Airport     Airport `gorm:"foreignKey:AirportID"`
+	Logo        string
 	Airplanes   []Airplane
 }
 
 type Airplane struct {
-	gorm.Model
-	ID           uint
-	AirplaneName string
-	Status       string
-	AirlineID    uint
-	Airline      Airline `gorm:"foreignKey:AirlineID"`
-	Capacity     int
-	Seats        []Seat
-	Flights      []Flight
+	ID        string `gorm:"primaryKey;unique"`
+	AirlineID string
+	Airline   Airline `gorm:"foreignKey:AirlineID"`
+	Seats     []Seat
+	Flights   []Flight
 }
 
 type Seat struct {
-	gorm.Model
-	SeatNumber int `gorm:"primaryKey"`
-	AirplaneID uint
+	SeatNumber int    `gorm:"primaryKey"`
+	AirplaneID string `gorm:"primaryKey"`
+	Status     bool
 	Airplane   Airplane `gorm:"foreignKey:AirplaneID"`
 }
 
 type Flight struct {
-	gorm.Model
-	ID                   uint
-	FlightCode           string
-	OriginAirportID      uint
+	ID                   uint `gorm:"primaryKey"`
+	OriginAirportID      string
 	OriginAirport        Airport `gorm:"foreignKey:OriginAirportID"`
-	DestinationAirportID uint
+	DestinationAirportID string
 	DestinationAirport   Airport `gorm:"foreignKey:DestinationAirportID"`
-	AirplaneID           uint
+	AirplaneID           string
 	Airplane             Airplane `gorm:"foreignKey:AirplaneID"`
-	FlightName           string
+	TicketID             string
+	Ticket               Ticket `gorm:"foreignKey:TicketID"`
 	DepartureDate        time.Time
-	Duration             int
-	Tickets              []Ticket
+	ArrivalDate          time.Time
 }
 
 type Ticket struct {
-	gorm.Model
-	ID                 uint
+	ID                 string `gorm:"primaryKey"`
 	Price              int
-	NumberOfTransit    int
-	Status             string
-	ValidFrom          time.Time
-	ValidTo            time.Time
-	FlightID           uint
-	Flight             Flight `gorm:"foreignKey:FlightID"`
+	Flights            []Flight
+	CartTicket         []CartTicket
 	TransactionTickets []TransactionTicket
-	CartTickets        []CartTicket
 }
 
 type Promo struct {
 	gorm.Model
-	ID               uint
-	Picture          string
-	PromoName        string
-	PromoDescription string
+	ID        uint
+	Picture   string `json:"picture"`
+	PromoName string `json:"promoName"`
+	PromoCode string `json:"promoCode"`
+	Active    bool
+}
+
+type UsedPromo struct {
+	UserID    uint   `gorm:"primaryKey"`
+	User      User   `gorm:"foreignKey:UserID"`
+	PromoCode string `gorm:"primaryKey"`
 }
 
 type TransactionTicket struct {
-	gorm.Model
-	ID              uint
-	UserID          uint
-	User            User `gorm:"foreignKey:UserID"`
-	TicketID        uint
-	Ticket          Ticket `gorm:"foreignKey:TicketID"`
-	TransactionDate time.Time
-	Quantity        int
+	ID                          uint `gorm:"primaryKey"`
+	UserID                      uint
+	User                        User `gorm:"foreignKey:UserID"`
+	TicketID                    string
+	Ticket                      Ticket `gorm:"foreignKey:TicketID"`
+	TransactionDate             time.Time
+	Quantity                    int
+	TransactionSeatReservations []TransactionSeatReservation
+	Status                      bool
+	TotalPrice                  int
 }
 
 type CartTicket struct {
-	gorm.Model
-	UserID   uint
-	User     User `gorm:"foreignKey:UserID"`
-	TicketID uint
-	Ticket   Ticket `gorm:"foreignKey:TicketID"`
+	ID                   uint `gorm:"primaryKey"`
+	UserID               uint
+	User                 User `gorm:"foreignKey:UserID"`
+	TicketID             string
+	Ticket               Ticket `gorm:"foreignKey:TicketID"`
+	TotalPrice           int
+	Quantity             int
+	CartSeatReservations []CartSeatReservation
+	Status               bool
+}
+
+type CartSeatReservation struct {
+	ID           uint
+	SeatNumber   int
+	AirplaneCode string
+	CartTicketID uint
+	CartTicket   CartTicket `gorm:"foreignKey:CartTicketID"`
+}
+
+type TransactionSeatReservation struct {
+	ID                  uint `gorm:"primaryKey"`
+	SeatNumber          int
+	AirplaneCode        string
+	TransactionTicketID uint
+	TransactionTicket   TransactionTicket `gorm:"foreignKey:TransactionTicketID"`
 }
 
 type Hotel struct {
@@ -194,13 +207,14 @@ type Room struct {
 type CartHotel struct {
 	gorm.Model
 	ID        uint
-	UserID    uint   `json:"userID"`
-	User      User   `gorm:"foreignKey:UserID"`
-	RoomID    uint   `json:"roomID"`
-	Room      Room   `gorm:"foreignKey:RoomID"`
-	Price     int    `json:"price"`
-	StartDate string `json:"startDate"`
-	EndDate   string `json:"endDate"`
+	UserID    uint      `json:"userID"`
+	User      User      `gorm:"foreignKey:UserID"`
+	RoomID    uint      `json:"roomID"`
+	Room      Room      `gorm:"foreignKey:RoomID"`
+	Price     int       `json:"price"`
+	StartDate time.Time `json:"startDate"`
+	EndDate   time.Time `json:"endDate"`
+	Status    bool
 }
 
 type HotelFacility struct {
@@ -226,13 +240,16 @@ type RoomFacilityType struct {
 }
 
 type TransactionHotel struct {
-	gorm.Model
-	ID              uint
+	ID              uint `gorm:"primaryKey"`
+	UserID          uint
+	User            User `gorm:"foreignKey:UserID"`
 	RoomID          uint
 	Room            Room `gorm:"foreignKey:RoomID"`
 	CheckInDate     time.Time
 	CheckOutDate    time.Time
 	TransactionDate time.Time
+	Price           int
+	Status          bool
 }
 
 type PersonalQuestion struct {

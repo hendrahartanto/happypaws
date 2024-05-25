@@ -9,17 +9,61 @@ import ButtonBlue from "../../components/ButtonBlue";
 import ButtonOrange from "../../components/ButtonOrange";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import SelectForm from "../../components/SelectForm";
-import { postData } from "../../services/api";
+import { postData, updateData } from "../../services/api";
+import { useUser } from "../../contexts/UserContext";
+import FormModal from "../../components/FormModal";
 
 const ProfilePage = () => {
+  const [error, setError] = useState({
+    isError: false,
+    erroeMessage: "",
+  });
+  const { user: currUser } = useUser();
   const navigate = useNavigate();
+
+  const [bookModalIsOpen, setBookModalIsOpen] = useState(false);
+
+  const [modalError, setModalError] = useState({
+    isError: false,
+    erroeMessage: "",
+  });
+
+  const [unaithorized, setIsUnauthorized] = useState(false);
+
+  const inputFormFields = [
+    {
+      label: "Credit Card Number",
+      name: "creditCardNumber",
+      type: "text",
+      placeHolder: "Inserr credit card number",
+    },
+    {
+      label: "CVV",
+      name: "cvv",
+      type: "text",
+      placeHolder: "Inserr cvv",
+    },
+  ];
+
+  const bookModalClose = () => {
+    setBookModalIsOpen(false);
+  };
+
+  const [reviewFormData, setreviewFormData] = useState({
+    creditCardNumber: "",
+    cvv: "",
+  });
 
   const {
     data: user,
     loading: userLoading,
     unauthorized,
+    refetch,
   } = useFetch("http://localhost:8080/user/profile");
+
+  useEffect(() => {
+    refetch();
+  }, [currUser]);
 
   const [photo, setPhoto] = useState(null);
 
@@ -116,8 +160,19 @@ const ProfilePage = () => {
       paymentMethod,
     } = formData;
 
-    await axios
-      .put(`http://localhost:8080/user/updateuser/${user.ID}`, {
+    // await axios
+    // 	.put(`http://localhost:8080/user/updateuser/${user.ID}`, {
+    // 		userName,
+    // 		email,
+    // 		isSubscribed,
+    // 		profilePicture: photoURL,
+    // 		address,
+    // 		paymentMethod: parseInt(paymentMethod.toString()),
+    // 		phoneNumber,
+    // 	})
+    // 	.catch((error) => console.error("Error updating todo:", error));
+    try {
+      await updateData(`http://localhost:8080/user/updateuser/${user.ID}`, {
         userName,
         email,
         isSubscribed,
@@ -125,25 +180,20 @@ const ProfilePage = () => {
         address,
         paymentMethod: parseInt(paymentMethod.toString()),
         phoneNumber,
-      })
-      .catch((error) => console.error("Error updating todo:", error));
-
-    navigate("/home");
-  };
-
-  const addCreditCard = async () => {
-    const userID = user.ID;
-    const amount = 10000000;
-    const cardNumber = "123456789";
-    const cvv = "123";
-    await postData("http://localhost:8080/creditcard/addcreditcard", {
-      userID,
-      amount,
-      cardNumber,
-      cvv,
+      });
+    } catch (error: any) {
+      setError({
+        isError: true,
+        erroeMessage: error.message,
+      });
+      return;
+    }
+    setError({
+      isError: false,
+      erroeMessage: "",
     });
 
-    window.location.reload();
+    navigate("/home");
   };
 
   const logout = async () => {
@@ -164,8 +214,50 @@ const ProfilePage = () => {
     navigate("/home");
   };
 
+  const handleAddCreditCard = async (formData: any) => {
+    console.log(formData);
+    try {
+      await postData(
+        "http://localhost:8080/creditcard/addcreditcard",
+        {
+          creditCardNumber: formData.creditCardNumber,
+          cvv: formData.cvv,
+          userID: user.ID,
+          amount: 10000000,
+        },
+        { withCredentials: true }
+      );
+    } catch (error: any) {
+      if (error.message.includes("Unauthorized")) {
+        setIsUnauthorized(true);
+        return;
+      }
+      setModalError({
+        isError: true,
+        erroeMessage: error.message,
+      });
+      return;
+    }
+    setModalError({
+      isError: false,
+      erroeMessage: "",
+    });
+    alert("Added New Credit Card!");
+    setBookModalIsOpen(false);
+    refetch();
+  };
+
   return (
     <div className="profile-page">
+      <FormModal
+        isOpen={bookModalIsOpen}
+        onSubmit={handleAddCreditCard}
+        inputFormFields={inputFormFields}
+        modalFormData={reviewFormData}
+        title="Add Credit Card"
+        onClose={bookModalClose}
+        modalError={modalError}
+      />
       <div className="page-center">
         <div className="profile-container">
           <form action="">
@@ -226,23 +318,24 @@ const ProfilePage = () => {
                 label={"Address"}
                 onChange={handleInputChange}
               />
-              <SelectForm
-                label="Select Payment Method"
-                name="paymentMethod"
-                value={formData.paymentMethod}
-                options={paymentMethods.map(
-                  (item: { id: number; name: string }) => ({
-                    id: item.id,
-                    name: item.name,
-                  })
-                )}
-                onChange={handleInputChange}
-              />
+              {/* PAYMENT METHOD */}
+              {/* <SelectForm
+								label="Select Payment Method"
+								name="paymentMethod"
+								value={formData.paymentMethod}
+								options={paymentMethods.map(
+									(item: { id: number; name: string }) => ({
+										id: item.id,
+										name: item.name,
+									})
+								)}
+								onChange={handleInputChange}
+							/> */}
               {user.CreditCards.length == 0 && (
                 <div className="button-credit">
                   <ButtonOrange
                     label={"Add Credit Card"}
-                    onClick={() => addCreditCard()}
+                    onClick={() => setBookModalIsOpen(true)}
                     type={"button"}
                   />
                 </div>
@@ -262,6 +355,9 @@ const ProfilePage = () => {
                   type={"submit"}
                 />
               </div>
+              {error.isError && (
+                <div className="error">{error.erroeMessage}</div>
+              )}
               <div className="button">
                 <ButtonBlue label={"Logout"} onClick={logout} type={"button"} />
               </div>

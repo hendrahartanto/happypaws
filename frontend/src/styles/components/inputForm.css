@@ -10,10 +10,10 @@
 .input-form p.file {
 	margin-bottom: 4px;
 	color: var(--input-label-color);
-	text-align: center;
 }
 
 .input-form input {
+	color: var(--primary-text-color);
 	box-sizing: border-box;
 	border: 1px solid;
 	border-radius: 3px;

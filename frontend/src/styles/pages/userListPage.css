@@ -1,0 +1,99 @@
+.user-list-page {
+}
+
+.user-list-page .broadcast-section {
+}
+
+.user-list-page .broadcast-section .header {
+	color: var(--primary-text-color);
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.user-list-page .user-list-section .user-list-header {
+	color: var(--primary-text-color);
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.user-list-page .broadcast-container {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	padding: 30px;
+	background-color: var(--background-color);
+	margin-bottom: 20px;
+}
+
+.user-list-page .broadcast-container .button {
+	height: 30px;
+}
+
+.user-list-page .user-list-page-container {
+	padding-left: 200px;
+	padding-right: 200px;
+	padding-top: 100px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	padding-bottom: 100px;
+}
+
+.user-list-page-container .user-card {
+	display: flex;
+	padding: 30px;
+	background-color: var(--background-color);
+	border-radius: 5px;
+	gap: 30px;
+}
+
+.user-card .card-left img {
+	border-radius: 50%;
+	width: 150px;
+}
+
+.user-card .card-right {
+	color: var(--primary-text-color);
+	flex-grow: 1;
+}
+
+.user-card .button {
+	width: 80px;
+}
+
+.user-card .card-right .header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.user-card .username {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.user-card .user-status {
+	color: white;
+	background-color: rgb(28, 188, 28);
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.user-card .user-status.banned {
+	background-color: rgb(255, 64, 64);
+}
+
+.user-card .left {
+	display: flex;
+	gap: 10px;
+}
+
+.user-card .user-information {
+	color: var(--primary-text-color2);
+	margin-top: 10px;
+	font-size: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}

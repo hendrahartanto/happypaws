@@ -1,0 +1,147 @@
+.flight-detail-page {
+}
+
+.flight-detail-page .flight-detail-page-container {
+	padding-top: 100px;
+	padding-left: 233px;
+	padding-right: 233px;
+}
+
+.flight-detail-page .flight-detail-page-container .flight-detail-page-header {
+	font-size: 22px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.flight-detail-page .flight-card-container {
+	margin-bottom: 15px;
+}
+
+.booking-detail-section {
+	margin-bottom: 30px;
+}
+
+.booking-detail-section .booking-detail-header {
+	color: var(--primary-text-color);
+	font-size: 22px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.booking-detail-section .booking-detail-container {
+	background-color: var(--background-color);
+	padding: 30px;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.booking-detail-section .button-container {
+	margin-top: 10px;
+	display: flex;
+	justify-content: end;
+	gap: 10px;
+}
+
+.booking-detail-section .button-container .button {
+	width: 150px;
+	height: 30px;
+}
+
+.seat-selection-section {
+	padding-bottom: 100px;
+}
+
+.seat-selection-section .seat-selection-header {
+	color: var(--primary-text-color);
+	font-size: 22px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.seat-selection-section .seat-selection-container {
+	border-radius: 5px;
+	padding: 30px 200px;
+	background-color: var(--background-color);
+}
+
+.seat-selection-section .seat-selection-container .airplane-code {
+	color: var(--primary-text-color);
+	font-size: 22px;
+	font-weight: 600;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+.seat-selection-section .seat-selection-inner-container {
+}
+
+.seat-map-container {
+	padding: 30px;
+	display: grid;
+	/* grid-template-rows: 100px 100px 100px 100px; */
+	grid-template-columns: auto 1fr auto auto;
+	background-color: var(--background-secondary-color);
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+
+.seat-map-container .seat {
+	height: fit-content;
+	width: fit-content;
+	position: relative;
+}
+
+.seat-map-container .seat:hover .pop-up {
+	color: var(--primary-text-color);
+	display: block;
+}
+
+.seat-map-container .seat .pop-up {
+	pointer-events: none;
+	padding: 5px;
+	display: none;
+	position: absolute;
+	width: 130px;
+	background-color: var(--background-color);
+	height: 30px;
+	top: -22px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 5px;
+	border: 1px solid rgb(206, 206, 206);
+	z-index: 1;
+}
+
+.seat-map-container input[type="checkbox"] {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border: 1px solid #868686;
+	border-radius: 3px;
+	cursor: pointer;
+	outline: none;
+	width: 30px;
+	height: 30px;
+	background-color: white;
+}
+
+.seat-map-container input[type="checkbox"]:checked {
+	background-color: rgb(107, 255, 107);
+}
+
+.seat-map-container input[type="checkbox"].booked {
+	background-color: rgb(201, 201, 201);
+	pointer-events: none;
+}
+
+.flight-detail-page .error {
+	margin-top: 10px;
+	text-align: end;
+}
+
+.flight-detail-page .selected-seat {
+	color: var(--primary-text-color);
+}

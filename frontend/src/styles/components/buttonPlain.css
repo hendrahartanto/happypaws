@@ -1,0 +1,15 @@
+.button-plain {
+	border-radius: 5px;
+	background-color: rgb(204, 204, 204);
+	text-decoration: none;
+	color: black;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button-plain:hover {
+	background-color: rgb(166, 166, 166);
+}

@@ -1,26 +1,27 @@
 .select-form {
-  width: 100%;
+	width: 100%;
 }
 
 .select-form p {
-  margin-bottom: 6px;
-  margin-left: 1px;
-  color: var(--input-label-color);
+	margin-bottom: 6px;
+	margin-left: 1px;
+	color: var(--input-label-color);
 }
 
 .select-form select {
-  box-sizing: border-box;
-  border: 1px solid;
-  border-radius: 3px;
-  border-color: rgb(210, 209, 209);
-  background-color: var(--background-color);
-  width: 100%;
-  padding: 3px 0;
+	color: var(--input-label-color);
+	box-sizing: border-box;
+	border: 1px solid;
+	border-radius: 3px;
+	border-color: rgb(210, 209, 209);
+	background-color: var(--background-color);
+	width: 100%;
+	padding: 3px 0;
 }
 
 .select-form .container {
-  height: 34px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+	height: 34px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }

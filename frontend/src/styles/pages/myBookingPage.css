@@ -1,0 +1,123 @@
+.my-booking-page {
+	padding-top: 56px;
+}
+
+.my-booking-page .my-booking-page-container {
+	margin-top: 50px;
+	gap: 80px;
+	display: flex;
+	padding-bottom: 40px;
+}
+
+.my-booking-page .side-section {
+	width: 400px;
+}
+
+.my-booking-page .side-container {
+	border-radius: 5px;
+	height: 100%;
+	width: 100%;
+}
+
+.my-booking-page .side-container .filter-section {
+}
+
+.filter-section .filter-header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+
+.filter-section .filter-header .reset-button {
+	cursor: pointer;
+	color: #1494c6;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.filter-section .filter-header .reset-button:hover {
+	color: #0881b1;
+}
+
+.filter-section .filter-container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.filter-section .filter-container .filter-type-container {
+	padding: 20px;
+	background-color: var(--background-color);
+	border-radius: 5px;
+}
+
+.my-booking-page .tickets-container {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.my-booking-page .hotels-container {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.my-booking-page .item-container {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.my-booking-page .hotels-section .item {
+	position: relative;
+	background-color: var(--background-color);
+	display: flex;
+	border-radius: 6px;
+}
+
+.my-booking-page .hotels-section .item .left {
+	width: 350px;
+}
+
+.my-booking-page .hotels-section .item .left img {
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.my-booking-page .hotels-section .item .right {
+	flex-grow: 1;
+	padding: 30px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	gap: 10px;
+}
+
+.my-booking-page .hotels-section .item .date {
+	font-size: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.my-booking-page .item-2 {
+	box-sizing: border-box;
+	padding: 30px;
+	padding-top: 40px;
+	position: relative;
+	display: flex;
+	border-radius: 6px;
+	background-color: var(--background-color);
+	flex-direction: column;
+}
+
+.my-booking-page .item-2 .header .duration {
+	margin-right: 0px;
+	font-size: 15px;
+	font-weight: 600;
+}

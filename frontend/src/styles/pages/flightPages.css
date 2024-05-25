@@ -1,0 +1,75 @@
+.flights-page {
+	background-color: var(--background-secondary-color);
+	padding-top: 56px;
+}
+
+.flights-page .flight-page-container {
+	margin-top: 50px;
+	gap: 40px;
+	display: flex;
+	padding-bottom: 40px;
+}
+
+.flights-page .side-section {
+	width: 400px;
+}
+
+.flights-page .side-container {
+	border-radius: 5px;
+	height: 100%;
+	width: 100%;
+}
+
+.flights-page .side-container .filter-section {
+}
+
+.filter-section .filter-header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+
+.filter-section .filter-header .title {
+	color: var(--primary-text-color);
+	font-size: 15px;
+}
+
+.filter-section .filter-header .reset-button {
+	cursor: pointer;
+	color: #1494c6;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.filter-section .filter-header .reset-button:hover {
+	color: #0881b1;
+}
+
+.filter-section .filter-container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.filter-section .filter-container .filter-price-container {
+	padding: 20px;
+	background-color: var(--background-color);
+	border-radius: 5px;
+}
+
+.filter-section .filter-container .filter-transit-container {
+	padding: 20px;
+	background-color: var(--background-color);
+	border-radius: 5px;
+}
+
+.flights-section .flights-container {
+}
+
+.filter-section .filter-button {
+	height: 30px;
+}
+
+.flights-page .flights-section {
+	flex-grow: 1;
+}

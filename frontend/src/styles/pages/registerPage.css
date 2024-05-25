@@ -1,80 +1,84 @@
 .register-page {
-  width: 100%;
-  height: 100vh;
-  background-color: var(--traveloka-background);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	width: 100%;
+	height: 100vh;
+	background-color: var(--traveloka-background);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .register-page form {
-  border-radius: 3px;
-  width: 600px;
-  background-color: var(--background-color);
-  padding: 30px 20px;
+	border-radius: 3px;
+	width: 600px;
+	background-color: var(--background-color);
+	padding: 30px 20px;
 }
 
 .register-page .header {
-  font-size: 24px;
-  margin-bottom: 25px;
+	font-size: 24px;
+	margin-bottom: 25px;
 }
 
 .register-page .form-container {
-  display: flex;
-  gap: 30px;
-  margin-bottom: 12px;
+	display: flex;
+	gap: 30px;
+	margin-bottom: 12px;
 }
 
 .register-page .left {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	width: 100%;
 }
 
 .register-page .right {
-  width: 100%;
+	width: 100%;
 }
 
 .register-page .right {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	width: 100%;
 }
 
 .gender-input {
-  height: 54px;
+	height: 54px;
 }
 
 .gender-input .label {
-  margin-bottom: 6px;
-  margin-left: 1px;
-  color: var(--input-label-color);
+	margin-bottom: 6px;
+	margin-left: 1px;
+	color: var(--input-label-color);
 }
 
 .gender-input .container {
-  height: 34px;
-  align-items: center;
-  display: flex;
-  gap: 20px;
-  color: var(--input-label-color);
+	height: 34px;
+	align-items: center;
+	display: flex;
+	gap: 20px;
+	color: var(--input-label-color);
 }
 
 .gender-input label {
-  margin-left: 2px;
+	margin-left: 2px;
 }
 
 .register-page .submit-button {
-  height: 35px;
+	height: 35px;
 }
 
 .register-page .bottom {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
 }
 
 .register-page .error {
-  color: rgb(224, 61, 61);
+	color: rgb(224, 61, 61);
+}
+
+.register-page .flex-container {
+	display: flex;
 }

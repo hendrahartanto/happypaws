@@ -1,0 +1,115 @@
+.flight-card-container {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.flight-card {
+	text-decoration: none;
+	color: var(--primary-text-color);
+	background-color: var(--background-color);
+	padding: 20px;
+	border-radius: 5px;
+	border: 1px solid rgba(0, 0, 0, 0);
+	transition: 0.2s;
+	transition: border;
+}
+
+.flight-card.disabled {
+	pointer-events: none;
+}
+
+.flight-card:hover {
+	border: 1px solid var(--traveloka-background);
+}
+
+.flight-card .header {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.flight-card .header .airline {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+}
+
+.flight-card .header .airline .airline-container {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.flight-card .header .airline img {
+	width: 25px;
+	height: auto;
+}
+
+.flight-card .header .airline p {
+}
+
+.flight-card .header .duration {
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.flight-card .body {
+	margin-top: 20px;
+}
+
+.flight-card .body .destination {
+	display: flex;
+	flex-direction: column;
+	gap: 13px;
+}
+
+.flight-card .body .destination .destination-container {
+	color: var(--primary-text-color2);
+	font-size: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.flight-card .body .destination .destination-container .content {
+	background-color: var(--background-color);
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 5px;
+}
+
+.flight-card .body .destination .destination-container .airplane-code {
+	color: var(--primary-text-color);
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.flight-card .body .destination .destination-container .seat-container {
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.flight-card .body .destination .destination-container .seat-container .seat {
+	background-color: var(--traveloka-background);
+	color: white;
+	padding: 3px 5px;
+	border-radius: 5px;
+}
+
+.flight-card .price-container {
+	margin-top: 20px;
+	width: 100%;
+}
+
+.flight-card .price-container .price {
+	font-size: 17px;
+}
+
+.flight-card .seat-container .seat-inner-container {
+	display: flex;
+	flex-direction: column;
+	grid-area: 8px;
+}

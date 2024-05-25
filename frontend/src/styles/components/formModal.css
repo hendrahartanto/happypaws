@@ -1,0 +1,84 @@
+.form-modal .overlay {
+	z-index: 2;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: none;
+}
+
+.form-modal .form-modal-container .exit {
+	display: flex;
+	justify-content: end;
+	margin-top: -15px;
+	margin-right: -15px;
+}
+
+.form-modal .form-modal-container .exit img {
+	cursor: pointer;
+}
+
+.form-modal .overlay.open {
+	display: block;
+}
+
+.form-modal .form-modal-container {
+	border-radius: 5px;
+	display: none;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: fixed;
+	background-color: white;
+	padding: 30px;
+	width: 400px;
+}
+
+.form-modal .form-modal-container.open {
+	z-index: 3;
+	display: block;
+}
+
+.form-modal .form-modal-container .title {
+	font-size: 22px;
+	margin-bottom: 15px;
+}
+
+.form-modal .form-modal-container .book-date-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-modal .form-modal-container .book-date-container {
+	color: var(--primary-text-color2);
+	font-size: 12px;
+	margin-bottom: 20px;
+}
+
+.form-modal .form-modal-container .select-form-container {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	margin-bottom: 5px;
+}
+
+.form-modal .form-modal-container .input-form-container {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.form-modal .form-modal-container .book-price {
+	font-size: 17px;
+	color: rgb(237, 93, 9);
+	font-weight: bold;
+	text-align: end;
+	margin-top: 10px;
+}
+
+.form-modal .submit-button {
+	margin-top: 15px;
+	height: 30px;
+}

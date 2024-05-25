@@ -8,4 +8,5 @@ export interface IUser {
 	isSubscribed: boolean;
 	profilePicture: string | nulll;
 	role: string;
+	CreditCards: any;
 }

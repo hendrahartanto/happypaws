@@ -1,6 +1,8 @@
 package seeds
 
 import (
+	"time"
+
 	"github.com/L0ckedkey/go_backend/database"
 	"github.com/L0ckedkey/go_backend/models"
 )
@@ -90,7 +92,7 @@ func Seed() {
 			Password:       "123123123",
 			DOB:            "2004-04-26",
 			Gender:         "male",
-			ProfilePicture: nil,
+			ProfilePicture: "https://firebasestorage.googleapis.com/v0/b/travelohi-ef7d8.appspot.com/o/photos%2Fanonymous.png?alt=media&token=706538a7-0c32-47d7-99b2-351a6ba7b8c4",
 			IsBanned:       false,
 			Role:           "user",
 			IsSubscribed:   true,
@@ -98,6 +100,29 @@ func Seed() {
 			Address:        "Jl. Kulim No. 70A",
 			PaymentMethod:  0,
 			Money:          10000000,
+		},
+		{
+			Username:       "Admin",
+			Email:          "hendrazhuo60@gmail.com",
+			Password:       "123123123",
+			DOB:            "2004-04-26",
+			Gender:         "male",
+			ProfilePicture: "https://firebasestorage.googleapis.com/v0/b/travelohi-ef7d8.appspot.com/o/photos%2Fanonymous.png?alt=media&token=706538a7-0c32-47d7-99b2-351a6ba7b8c4",
+			IsBanned:       false,
+			Role:           "admin",
+			IsSubscribed:   false,
+			PhoneNumber:    "088271078250",
+			Address:        "Jl. Kulim No. 70A",
+			PaymentMethod:  0,
+			Money:          10000000,
+		},
+	}
+
+	answers := []models.Answer{
+		{
+			PersonalQuestionID: 2,
+			UserID:             1,
+			Answer:             "pekanbaru",
 		},
 	}
 
@@ -478,10 +503,145 @@ func Seed() {
 		},
 	}
 
+	promos := []models.Promo{
+		{
+			Picture:   "https://firebasestorage.googleapis.com/v0/b/travelohi-ef7d8.appspot.com/o/photos%2Fpromo1.png.webp?alt=media&token=2f817abe-336e-445e-ac65-362d295a9f9b",
+			PromoName: "Lunary New Year Promo",
+			PromoCode: "ABC123",
+			Active:    true,
+		},
+		{
+			Picture:   "https://firebasestorage.googleapis.com/v0/b/travelohi-ef7d8.appspot.com/o/photos%2Fpromo2.png.webp?alt=media&token=abf2fbcb-eb35-4ce3-a9e0-7d6c5c27c325",
+			PromoName: "Ramadhan Promo",
+			PromoCode: "123132",
+			Active:    true,
+		},
+		{
+			Picture:   "https://firebasestorage.googleapis.com/v0/b/travelohi-ef7d8.appspot.com/o/photos%2Fpromo3.webp?alt=media&token=db308bd5-4b7f-4a64-b30e-e960d90f4bc9",
+			PromoName: "Flash Sale Promo",
+			PromoCode: "ABCDEF",
+			Active:    true,
+		},
+		{
+			Picture:   "https://firebasestorage.googleapis.com/v0/b/travelohi-ef7d8.appspot.com/o/photos%2Fpromo4.webp?alt=media&token=cdca6157-d08d-4277-9b00-ade3e7eac532",
+			PromoName: "Birthday Promo",
+			PromoCode: "123ABC",
+			Active:    true,
+		},
+	}
+
+	airports := []models.Airport{
+		{
+			AirportName: "Soekarno Hatta International Airport",
+			CityID:      4,
+		},
+		{
+			AirportName: "Ngurah Rai International Airport",
+			CityID:      1,
+		},
+		{
+			AirportName: "Sultan Syarif Kasim II",
+			CityID:      3,
+		},
+		{
+			AirportName: "Kuala Lumpur International Airport",
+			CityID:      9,
+		},
+	}
+
+	airlines := []models.Airline{
+		{
+			ID:          "IU",
+			AirlineName: "Super Air Jet",
+			Logo:        "https://firebasestorage.googleapis.com/v0/b/travelohi-ef7d8.appspot.com/o/photos%2Fsuper_air_jet.png?alt=media&token=df17886d-f46c-4e85-8f7b-7c2c28a99613",
+		},
+		{
+			ID:          "QG",
+			AirlineName: "Citilink",
+			Logo:        "https://firebasestorage.googleapis.com/v0/b/travelohi-ef7d8.appspot.com/o/photos%2Fcitilink.png?alt=media&token=c914ec71-f565-428e-a7ee-9b24e6344338",
+		},
+		{
+			ID:          "ID",
+			AirlineName: "Batik Air",
+			Logo:        "https://firebasestorage.googleapis.com/v0/b/travelohi-ef7d8.appspot.com/o/photos%2Fbatik_air.png?alt=media&token=b7eba1c9-db0e-4cd5-a6b4-8bb8924436e5",
+		},
+	}
+
+	airplanes := []models.Airplane{
+		{
+			ID:        "IU866",
+			AirlineID: "IU",
+		},
+		{
+			ID:        "IU193",
+			AirlineID: "IU",
+		},
+		{
+			ID:        "QG938",
+			AirlineID: "QG",
+		},
+		{
+			ID:        "ID728",
+			AirlineID: "ID",
+		},
+	}
+
+	tickets := []models.Ticket{
+		{
+			ID:    "MOJEW",
+			Price: 754500,
+		},
+		{
+			ID:    "KSURH",
+			Price: 1173152,
+		},
+		{
+			ID:    "IGNSJ",
+			Price: 1727600,
+		},
+	}
+
+	flights := []models.Flight{
+		{
+			OriginAirportID:      "Soekarno Hatta International Airport",
+			DestinationAirportID: "Ngurah Rai International Airport",
+			AirplaneID:           "IU866",
+			DepartureDate:        time.Date(2024, time.February, 25, 10, 40, 0, 0, time.UTC),
+			ArrivalDate:          time.Date(2024, time.February, 25, 13, 40, 0, 0, time.UTC),
+			TicketID:             "MOJEW",
+		},
+		{
+			OriginAirportID:      "Soekarno Hatta International Airport",
+			DestinationAirportID: "Sultan Syarif Kasim II",
+			AirplaneID:           "QG938",
+			DepartureDate:        time.Date(2024, time.February, 27, 9, 40, 0, 0, time.UTC),
+			ArrivalDate:          time.Date(2024, time.February, 27, 11, 25, 0, 0, time.UTC),
+			TicketID:             "KSURH",
+		},
+		{
+			OriginAirportID:      "Soekarno Hatta International Airport",
+			DestinationAirportID: "Kuala Lumpur International Airport",
+			AirplaneID:           "ID728",
+			DepartureDate:        time.Date(2024, time.February, 27, 6, 15, 0, 0, time.UTC),
+			ArrivalDate:          time.Date(2024, time.February, 27, 9, 20, 0, 0, time.UTC),
+			TicketID:             "IGNSJ",
+		},
+		{
+			OriginAirportID:      "Kuala Lumpur International Airport",
+			DestinationAirportID: "Sultan Syarif Kasim II",
+			AirplaneID:           "IU193",
+			DepartureDate:        time.Date(2024, time.February, 27, 16, 0, 0, 0, time.UTC),
+			ArrivalDate:          time.Date(2024, time.February, 27, 16, 55, 0, 0, time.UTC),
+			TicketID:             "IGNSJ",
+		},
+	}
+
+	database.DB.Create(&promos)
 	database.DB.Create(&roomFacilityTypes)
 	database.DB.Create(&hoteFacilityTypes)
-	database.DB.Create(&users)
 	database.DB.Create(&personalQuestions)
+	database.DB.Create(&users)
+	database.DB.Create(&answers)
 	database.DB.Create(&countries)
 	database.DB.Create(&cities)
 	database.DB.Create(&hotels)
@@ -489,4 +649,50 @@ func Seed() {
 	database.DB.Create(&rooms)
 	database.DB.Create(&roomFacilities)
 	database.DB.Create(&reviews)
+	database.DB.Create(&airports)
+	database.DB.Create(&airlines)
+	database.DB.Create(&airplanes)
+
+	for i := 1; i <= 30; i++ {
+		seat := models.Seat{
+			AirplaneID: "IU866",
+			SeatNumber: i,
+			Status:     false,
+		}
+		database.DB.Create(&seat)
+	}
+
+	for i := 1; i <= 30; i++ {
+		seat := models.Seat{
+			AirplaneID: "QG938",
+			SeatNumber: i,
+			Status:     false,
+		}
+		database.DB.Create(&seat)
+	}
+
+	for i := 1; i <= 30; i++ {
+		seat := models.Seat{
+			AirplaneID: "ID728",
+			SeatNumber: i,
+			Status:     false,
+		}
+		database.DB.Create(&seat)
+	}
+
+	for i := 1; i <= 30; i++ {
+		seat := models.Seat{
+			AirplaneID: "IU193",
+			SeatNumber: i,
+			Status:     false,
+		}
+		if i == 1 {
+			seat.Status = true
+		}
+		database.DB.Create(&seat)
+	}
+
+	database.DB.Create(&tickets)
+	database.DB.Create(&flights)
+
 }

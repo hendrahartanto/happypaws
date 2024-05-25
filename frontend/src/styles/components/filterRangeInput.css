@@ -1,0 +1,13 @@
+.filter-range-input {
+}
+
+.filter-range-input .header {
+	color: var(--primary-text-color);
+	font-size: 15px;
+	margin-bottom: 20px;
+}
+
+.filter-range-input .input-container {
+	display: flex;
+	gap: 20px;
+}

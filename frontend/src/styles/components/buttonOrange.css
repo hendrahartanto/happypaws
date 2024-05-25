@@ -10,6 +10,10 @@
 	align-items: center;
 }
 
-.button-orange:hover {
+.button-orange.disabled {
+	background-color: var(--button-secondary-color-disabled);
+}
+
+.button-orange.enabled:hover {
 	background-color: var(--button-secondary-hover-color);
 }

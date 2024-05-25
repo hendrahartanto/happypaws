@@ -40,3 +40,9 @@
 .login-page .error {
 	color: rgb(224, 61, 61);
 }
+
+.login-page .bottom {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}

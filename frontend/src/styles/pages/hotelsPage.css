@@ -1,27 +1,76 @@
 .hotels-page {
-  padding-top: 56px;
+	background-color: var(--background-secondary-color);
+	padding-top: 56px;
+}
+
+.hotels-page .hotel-page-container {
+	margin-top: 50px;
+	display: flex;
+	padding-bottom: 40px;
 }
 
 .hotels-page .side-section {
-  z-index: 0;
-  top: 0;
-  position: absolute;
-  height: 100vh;
-  width: 400px;
-  display: flex;
-  padding-bottom: 40px;
-  padding-top: 96px;
-  box-sizing: border-box;
+	width: 400px;
 }
 
 .hotels-page .side-container {
-  border-radius: 5px;
-  background-color: var(--background-color);
-  height: 100%;
-  width: 100%;
+	border-radius: 5px;
+	height: 100%;
+	width: 100%;
+}
+
+.hotels-page .side-container .filter-section {
+}
+
+.filter-section .filter-header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+
+.filter-section .filter-header .title {
+	color: var(--primary-text-color);
+	font-size: 15px;
+}
+
+.filter-section .filter-header .reset-button {
+	cursor: pointer;
+	color: #1494c6;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.filter-section .filter-header .reset-button:hover {
+	color: #0881b1;
+}
+
+.filter-section .filter-container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.filter-section .filter-container .filter-rating-container {
+	padding: 20px;
+	background-color: var(--background-color);
+	border-radius: 5px;
+}
+
+.filter-section .filter-container .filter-price-container {
+	padding: 20px;
+	background-color: var(--background-color);
+	border-radius: 5px;
+}
+
+.filter-section .filter-container .filter-facilities-container {
+	padding: 20px;
+	background-color: var(--background-color);
+	border-radius: 5px;
 }
 
 .hotels-section .hotels-container {
-  margin-top: 40px;
-  margin-left: 450px;
+}
+
+.filter-section .filter-button {
+	height: 30px;
 }
