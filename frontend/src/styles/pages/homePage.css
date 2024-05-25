@@ -1,3 +1,38 @@
 .home-page {
 	padding-top: 56px;
 }
+
+.home-page .hero-section {
+	background-color: var(--primary-background-light);
+}
+
+.home-page .hero-container {
+	display: flex;
+}
+
+.home-page .hero-container .hero-left {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 20px;
+	flex: 1;
+}
+
+.home-page .hero-container .hero-left .title {
+	color: white;
+	font-size: 40px;
+	font-weight: 600;
+}
+
+.home-page .hero-container .hero-left .subtitle {
+	color: white;
+	font-size: 30px;
+}
+
+.home-page .hero-container .hero-right {
+}
+
+.home-page .hero-container .hero-right img {
+	height: 600px;
+	display: block;
+}
