@@ -9,6 +9,10 @@ import FilterRangeInput from "../../components/FilterRangeInput";
 import FilterRadioButton from "../../components/FilterRadioButton";
 
 const HotelsPage = () => {
+	//pagination
+	const [currPage, setCurrPage] = useState(1);
+	const [postPerPage, setPostPerPage] = useState(10);
+
 	const [filterFormData, setFilterFormData] = useState({
 		minRating: 0,
 		maxRating: 10,

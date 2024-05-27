@@ -8,7 +8,7 @@ import facebookIcon from "../assets/social_media_icon/facebook.png";
 
 const Footer = () => {
 	return (
-		<div className="footer">
+		<div className="footer" id="footer">
 			<div className="page-center">
 				<div className="footer-container">
 					<div className="section-1">
