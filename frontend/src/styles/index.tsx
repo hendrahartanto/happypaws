@@ -22,6 +22,7 @@ import "./components/empty.css";
 import "./components/filterRangeInput.css";
 import "./components/filterRadioButton.css";
 import "./components/flightCard.css";
+import "./components/pagination.css";
 
 import "./pages/registerPage.css";
 import "./pages/loginPage.css";

@@ -68,7 +68,12 @@
 	border-radius: 5px;
 }
 
+.hotels-page .hotels-section {
+	flex: 1;
+}
+
 .hotels-section .hotels-container {
+	padding-bottom: 20px;
 }
 
 .filter-section .filter-button {

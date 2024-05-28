@@ -1,0 +1,21 @@
+.pagination {
+	display: flex;
+	justify-content: space-between;
+}
+
+.pagination .button {
+	color: white;
+	background-color: var(--primary-background);
+	padding: 8px 30px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.pagination .button:hover {
+	background-color: var(--button-hover-color);
+}
+
+.pagination .button.disabled {
+	background-color: var(--primary-background-light);
+	cursor: default;
+}

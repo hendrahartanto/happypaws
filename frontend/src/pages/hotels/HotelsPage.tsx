@@ -7,12 +7,9 @@ import ButtonBlue from "../../components/ButtonBlue";
 import FilterCheckbox from "../../components/FilterCheckbox";
 import FilterRangeInput from "../../components/FilterRangeInput";
 import FilterRadioButton from "../../components/FilterRadioButton";
+import Pagination from "../../components/Pagination";
 
 const HotelsPage = () => {
-	//pagination
-	const [currPage, setCurrPage] = useState(1);
-	const [postPerPage, setPostPerPage] = useState(10);
-
 	const [filterFormData, setFilterFormData] = useState({
 		minRating: 0,
 		maxRating: 10,
@@ -31,7 +28,7 @@ const HotelsPage = () => {
 		Restaurant: false,
 	});
 
-	const [hotelDatas, setHotelDatas] = useState(null);
+	const [hotelDatas, setHotelDatas] = useState([]);
 	const [hotelLoading, sethotelLoading] = useState(true);
 	const [fetch, setFetch] = useState(false);
 
@@ -60,6 +57,27 @@ const HotelsPage = () => {
 			})
 		);
 		sethotelLoading(false);
+	};
+
+	//pagination
+	const [currPage, setCurrPage] = useState(1);
+	const [postPerPage] = useState(4);
+	const indexOfLastPost = currPage * postPerPage;
+	const indexOfFirstPost = indexOfLastPost - postPerPage;
+	const currPosts = hotelDatas.slice(indexOfFirstPost, indexOfLastPost);
+
+	const paginate = (command: string) => {
+		if (command == "next") {
+			if (currPage == Math.ceil(hotelDatas.length / postPerPage)) {
+				return;
+			}
+			setCurrPage(currPage + 1);
+		} else {
+			if (currPage == 1) {
+				return;
+			}
+			setCurrPage(currPage - 1);
+		}
 	};
 
 	useEffect(() => {
@@ -193,8 +211,13 @@ const HotelsPage = () => {
 						<div className="hotels-section">
 							<div className="page-center">
 								<div className="hotels-container">
-									<HotelCard hotelDatas={hotelDatas} />
+									<HotelCard hotelDatas={currPosts} />
 								</div>
+								<Pagination
+									paginate={paginate}
+									currPage={currPage}
+									totalPaginate={Math.ceil(hotelDatas.length / postPerPage)}
+								/>
 							</div>
 						</div>
 					) : (

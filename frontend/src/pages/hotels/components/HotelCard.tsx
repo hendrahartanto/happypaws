@@ -3,6 +3,8 @@ import starIcon from "../../../assets/UI/star.png";
 import locationIcon from "../../../assets/UI/location.svg";
 
 const HotelCard = ({ hotelDatas }: any) => {
+	console.log(hotelDatas);
+
 	return (
 		<div className="hotel-card-container">
 			{hotelDatas.map((hotelData: any) => (
@@ -25,6 +27,7 @@ const HotelCard = ({ hotelDatas }: any) => {
 							<img src={starIcon} alt="" />
 							<div className="text">({hotelData.Reviews.length})</div>
 						</div>
+						<div className="services"></div>
 						<div className="address">
 							<img src={locationIcon} alt="" />
 							<p>{hotelData.address}</p>
