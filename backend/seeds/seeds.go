@@ -128,40 +128,40 @@ func Seed() {
 
 	hoteFacilityTypes := []models.HotelFacilityType{
 		{
-			FacilityName: "AC",
+			FacilityName: "Boarding",
 		},
 		{
-			FacilityName: "Swimming Pool",
+			FacilityName: "Playground",
 		},
 		{
-			FacilityName: "Parking",
+			FacilityName: "Grooming",
 		},
 		{
-			FacilityName: "Elevator",
+			FacilityName: "Spa",
 		},
 		{
-			FacilityName: "WiFi",
+			FacilityName: "Training",
 		},
 		{
-			FacilityName: "24-Hour Front Desk",
+			FacilityName: "Vet on Call",
 		},
 		{
-			FacilityName: "Restaurant",
+			FacilityName: "Pet Walking",
 		},
 	}
 
 	roomFacilityTypes := []models.RoomFacilityType{
 		{
-			FacilityName: "Shower",
+			FacilityName: "Private Play Area",
 		},
 		{
-			FacilityName: "Air Conditioning",
+			FacilityName: "Interactive Toy",
 		},
 		{
-			FacilityName: "Seating Area",
+			FacilityName: "Pet Longue",
 		},
 		{
-			FacilityName: "Balcony",
+			FacilityName: "24-Hour Pet Care Assistance",
 		},
 		{
 			FacilityName: "Hot Water",
@@ -173,112 +173,96 @@ func Seed() {
 			FacilityName: "Separate Dining Area",
 		},
 		{
-			FacilityName: "24-Hour Front Desk",
+			FacilityName: "Customized Bed",
 		},
 		{
-			FacilityName: "Wheel Chair Access",
+			FacilityName: "Warm Bathing",
 		},
 		{
-			FacilityName: "Refrigerator",
+			FacilityName: "Daily Cleaning",
 		},
 	}
 
 	hotels := []models.Hotel{
 		{
-			HotelName:   "Hadi Poetra Hotel",
-			Description: "Hadi Poetra Hotel is highly recommended for backpackers who want to get an affordable stay yet comfortable at the same time. For you, travelers who wish to travel comfortably on a budget, Hadi Poetra Hotel is the perfect place to stay that provides decent facilities as well as great services. This hotel is the perfect choice for couples seeking a romantic getaway or a honeymoon retreat. Enjoy the most memorable nights with your loved one by staying at Hadi Poetra Hotel.",
-			Address:     "Jalan Raya Kuta No.323 , Kuta Badung- Bali , Kuta, Badung, Bali, Indonesia, 80361",
-			CityID:      1,
-			Picture:     "https://firebasestorage.googleapis.com/v0/b/travelohi-ef7d8.appspot.com/o/photos%2Fhotel1.webp?alt=media&token=afea371b-b804-47b4-a921-bcc7249b6bcb",
+			HotelName:   "Arnamir Pet Hotel",
+			Description: "Arnamir Pet Hotel could be an option for those of you who want to entrust your beloved cat. Located in South Jakarta, this hotel apparently belongs to a local artist, namely Tya Ariestya. This hotel has 4 floors with a total of 40 rooms. The room types also vary, from deluxe, junior, to presidential suite. Not only rooms, this hotel also provides a playground, you know. The assessment on Google Reviews also shows positive comments. With comfortable facilities, it's guaranteed that your beloved baby will feel at home.",
+			Address:     "Jl. Sultan Agung No.26, Guntur, Kecamatan Setiabudi, Jakarta, Daerah Khusus Ibukota Jakarta 12980",
+			CityID:      4,
+			Picture:     "https://firebasestorage.googleapis.com/v0/b/happy-paws-ebc62.appspot.com/o/hotel_pictures%2F1%2F109919280-118658409931559-7368892822671891549-n-0ae541aa5608a62ad26095a31650f36f.jpg?alt=media&token=74027f7d-570b-4ead-ac32-9929e59cc68d",
 		},
 		{
-			HotelName:   "Allstay Ecotel Yogyakarta",
-			Description: "Allstay Ecotel Yogyakarta is highly recommended for backpackers who want to get an affordable stay yet comfortable at the same time.",
+			HotelName:   "Chilidog House",
+			Description: "Previously, the pet hotel was for cats, this time there is Chilidog House, a place to stay as well as a care center specifically for dogs. This pet hotel is located in Cilincing, North Jakarta. The facilities offered can be said to be very complete. Starting from accommodation, dog grooming, salons, playgrounds, training, to cafes. So, different from the previous recommendation, you have to pay a lot of money when leaving your beloved pet at Chilidog House. The reason is, this pet hotel applies prices that depend on the size and weight of the animal.",
 			Address:     "Jalan Wahid Hasyim No 41, Depok, Yogyakarta, Yogyakarta Province, Indonesia, 55281",
 			CityID:      2,
-			Picture:     "https://firebasestorage.googleapis.com/v0/b/travelohi-ef7d8.appspot.com/o/photos%2Fhotel2.webp?alt=media&token=5dfcf141-fb72-4fcc-9df9-a97ac5c8eaae",
+			Picture:     "https://firebasestorage.googleapis.com/v0/b/happy-paws-ebc62.appspot.com/o/hotel_pictures%2F2%2F2021-05-15-622c339354072d26246de090f6aff4e1.jpg?alt=media&token=e0c5a4eb-f840-455b-81e3-f97716d97c14",
 		},
 		{
-			HotelName:   "The Zuri Pekanbaru",
-			Description: "The Zuri Pekanbaru is a hotel near Airport, an ideal accommodation while waiting for your next flight. Enjoy a satisfying place to rest during your transit.",
+			HotelName:   "Groovy Paw Hotel & Resort",
+			Description: "Groovy Paw Hotel & Resort is a pet hotel specifically for dogs. The facilities are very complete, starting from boarding, grooming, playground, pet taxi, to swimming pool. Later, there will be complete facilities, such as eating 3 times a day with a choice of AC or non-AC rooms. So, the cost will depend on the animal's weight and room type. Actually, this pet hotel is located in Bogor. However, you can still come to Groovy Pet Shop which is located in Kemang and Bintaro.",
 			Address:     "Jalan Soekarno Hatta, Kompleks Transmart, Payung Sekaki, Pekanbaru, Riau, Indonesia, 28292",
 			CityID:      3,
-			Picture:     "https://firebasestorage.googleapis.com/v0/b/travelohi-ef7d8.appspot.com/o/photos%2Fhotel3.webp?alt=media&token=760c2b24-f1ec-430a-898b-d58690c04836",
+			Picture:     "https://firebasestorage.googleapis.com/v0/b/happy-paws-ebc62.appspot.com/o/hotel_pictures%2F3%2Funadjustednonraw-thumb-2519-d8b7de54697b71285d7b0a109748c849.jpg?alt=media&token=fe47e468-9d8d-4173-875e-997bc840f22a",
 		},
 	}
 
 	hotelFacilities := []models.HotelFacility{
 		{
 			HotelID:      1,
-			FacilityName: "AC",
+			FacilityName: "Boarding",
 		},
 		{
 			HotelID:      1,
-			FacilityName: "Swimming Pool",
+			FacilityName: "Playground",
 		},
 		{
 			HotelID:      1,
-			FacilityName: "24-Hour Front Desk",
+			FacilityName: "Spa",
 		},
 		{
 			HotelID:      1,
-			FacilityName: "Parking",
+			FacilityName: "Grooming",
 		},
 		{
 			HotelID:      1,
-			FacilityName: "Elevator",
+			FacilityName: "Training",
 		},
 		{
 			HotelID:      2,
-			FacilityName: "AC",
+			FacilityName: "Boarding",
 		},
 		{
 			HotelID:      2,
-			FacilityName: "Restaurant",
+			FacilityName: "Pet Walking",
 		},
 		{
 			HotelID:      2,
-			FacilityName: "24-Hour Front Desk",
+			FacilityName: "Spa",
 		},
 		{
 			HotelID:      2,
-			FacilityName: "Parking",
+			FacilityName: "Vet on Call",
 		},
 		{
 			HotelID:      2,
-			FacilityName: "Elevator",
-		},
-		{
-			HotelID:      2,
-			FacilityName: "WiFi",
+			FacilityName: "Playground",
 		},
 		{
 			HotelID:      3,
-			FacilityName: "AC",
+			FacilityName: "Boarding",
 		},
 		{
 			HotelID:      3,
-			FacilityName: "Swimming Pool",
+			FacilityName: "Training",
 		},
 		{
 			HotelID:      3,
-			FacilityName: "24-Hour Front Desk",
+			FacilityName: "Playground",
 		},
 		{
 			HotelID:      3,
-			FacilityName: "Parking",
-		},
-		{
-			HotelID:      3,
-			FacilityName: "Elevator",
-		},
-		{
-			HotelID:      3,
-			FacilityName: "WiFi",
-		},
-		{
-			HotelID:      3,
-			FacilityName: "Restaurant",
+			FacilityName: "Pet Walking",
 		},
 	}
 
@@ -348,123 +332,123 @@ func Seed() {
 	roomFacilities := []models.RoomFacility{
 		{
 			RoomID:       1,
-			FacilityName: "Shower",
+			FacilityName: "Daily Cleaning",
 		},
 		{
 			RoomID:       1,
-			FacilityName: "Seating Area",
+			FacilityName: "Interactive Toy",
 		},
 		{
 			RoomID:       1,
-			FacilityName: "Air Conditioning",
+			FacilityName: "Customized Bed",
 		},
 		{
 			RoomID:       2,
-			FacilityName: "Shower",
+			FacilityName: "Daily Cleaning",
 		},
 		{
 			RoomID:       2,
-			FacilityName: "Air Conditioning",
+			FacilityName: "Customized Bed",
 		},
 		{
 			RoomID:       3,
-			FacilityName: "Shower",
+			FacilityName: "Daily Cleaning",
 		},
 		{
 			RoomID:       3,
-			FacilityName: "Balcony",
+			FacilityName: "Separate Dining Area",
 		},
 		{
 			RoomID:       3,
-			FacilityName: "Seating Area",
+			FacilityName: "Interactive Toy",
 		},
 		{
 			RoomID:       3,
-			FacilityName: "Air Conditioning",
+			FacilityName: "Customized Bed",
 		},
 		{
 			RoomID:       4,
-			FacilityName: "Shower",
+			FacilityName: "Daily Cleaning",
 		},
 		{
 			RoomID:       4,
-			FacilityName: "Wheel Chair Access",
+			FacilityName: "24-Hour Pet Care Assistance",
 		},
 		{
 			RoomID:       4,
-			FacilityName: "Air Conditioning",
+			FacilityName: "Customized Bed",
 		},
 		{
 			RoomID:       5,
-			FacilityName: "Shower",
+			FacilityName: "Daily Cleaning",
 		},
 		{
 			RoomID:       5,
-			FacilityName: "Wheel Chair Access",
+			FacilityName: "24-Hour Pet Care Assistance",
 		},
 		{
 			RoomID:       5,
-			FacilityName: "Air Conditioning",
+			FacilityName: "Customized Bed",
 		},
 		{
 			RoomID:       6,
-			FacilityName: "Shower",
+			FacilityName: "Daily Cleaning",
 		},
 		{
 			RoomID:       6,
-			FacilityName: "Wheel Chair Access",
+			FacilityName: "24-Hour Pet Care Assistance",
 		},
 		{
 			RoomID:       6,
-			FacilityName: "Air Conditioning",
+			FacilityName: "Customized Bed",
 		},
 		{
 			RoomID:       7,
-			FacilityName: "Shower",
+			FacilityName: "Daily Cleaning",
 		},
 		{
 			RoomID:       7,
-			FacilityName: "Refrigerator",
+			FacilityName: "Warm Bathing",
 		},
 		{
 			RoomID:       7,
-			FacilityName: "Air Conditioning",
+			FacilityName: "Customized Bed",
 		},
 		{
 			RoomID:       8,
-			FacilityName: "Shower",
+			FacilityName: "Daily Cleaning",
 		},
 		{
 			RoomID:       8,
-			FacilityName: "Refrigerator",
+			FacilityName: "Warm Bathing",
 		},
 		{
 			RoomID:       8,
-			FacilityName: "Air Conditioning",
+			FacilityName: "Customized Bed",
 		},
 		{
 			RoomID:       9,
-			FacilityName: "Shower",
+			FacilityName: "Daily Cleaning",
 		},
 		{
 			RoomID:       9,
-			FacilityName: "Refrigerator",
+			FacilityName: "Warm Bathing",
 		},
 		{
 			RoomID:       9,
-			FacilityName: "Air Conditioning",
+			FacilityName: "Customized Bed",
 		},
 		{
 			RoomID:       10,
-			FacilityName: "Shower",
+			FacilityName: "Daily Cleaning",
 		},
 		{
 			RoomID:       10,
-			FacilityName: "Refrigerator",
+			FacilityName: "Warm Bathing",
 		},
 		{
 			RoomID:       10,
-			FacilityName: "Air Conditioning",
+			FacilityName: "Customized Bed",
 		},
 	}
 
@@ -694,5 +678,43 @@ func Seed() {
 
 	database.DB.Create(&tickets)
 	database.DB.Create(&flights)
+
+	//seeding hotel dummy
+	for i := 4; i <= 20; i++ {
+		hotel := models.Hotel{
+			HotelName:   "Dummy",
+			Description: "Dummy",
+			Address:     "Dummy",
+			CityID:      3,
+			Picture:     "https://firebasestorage.googleapis.com/v0/b/happy-paws-ebc62.appspot.com/o/hotel_pictures%2Fdummy%2Fsnapinstaapp-88169159-184952909609663-7999802850329044620-n-1080-846b34bc855fafc3e6e471702c8bf8f9.jpg?alt=media&token=79c20cda-6908-4f00-84f7-bd04ca784a39",
+		}
+		database.DB.Create(&hotel)
+	}
+
+	for i := 4; i < 8; i++ {
+		hotelFacility := models.HotelFacility{
+			HotelID:      uint(i),
+			FacilityName: "Boarding",
+		}
+		database.DB.Create(&hotelFacility)
+	}
+
+	for i := 4; i < 8; i++ {
+		room := models.Room{
+			HotelID:     uint(i),
+			RoomType:    "Dummy",
+			PricePerDay: 1,
+			Picture:     "https://firebasestorage.googleapis.com/v0/b/happy-paws-ebc62.appspot.com/o/hotel_pictures%2Fdummy%2Fsnapinstaapp-88169159-184952909609663-7999802850329044620-n-1080-846b34bc855fafc3e6e471702c8bf8f9.jpg?alt=media&token=79c20cda-6908-4f00-84f7-bd04ca784a39",
+		}
+		database.DB.Create(&room)
+	}
+
+	for i := 11; i < 15; i++ {
+		roomFacilitiy := models.RoomFacility{
+			RoomID:       uint(i),
+			FacilityName: "Daily Cleaning",
+		}
+		database.DB.Create(&roomFacilitiy)
+	}
 
 }

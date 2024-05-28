@@ -130,9 +130,11 @@ const ProfilePage = () => {
 
 	let photoURL: string;
 
+	console.log(user);
+
 	const handleFileUpload = async () => {
 		if (photo) {
-			const storageRef = ref(storage, `photos/${(photo as File).name}`);
+			const storageRef = ref(storage, `profile_picture/${user.ID}.jpeg`);
 			try {
 				await uploadBytes(storageRef, photo);
 				photoURL = await getDownloadURL(storageRef);

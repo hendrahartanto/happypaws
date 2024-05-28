@@ -19,13 +19,13 @@ const HotelsPage = () => {
 	});
 
 	const [filterFacilities, setFilterFacilities] = useState({
-		AC: false,
-		"Swimming Pool": false,
-		Parking: false,
-		Elevator: false,
-		WiFi: false,
-		"24-Hour Front Desk": false,
-		Restaurant: false,
+		Boarding: false,
+		Playground: false,
+		Grooming: false,
+		Spa: false,
+		Training: false,
+		"Vet on Call": false,
+		"Pet Walking": false,
 	});
 
 	const [hotelDatas, setHotelDatas] = useState([]);
@@ -93,13 +93,13 @@ const HotelsPage = () => {
 			sort: 0,
 		});
 		setFilterFacilities({
-			AC: false,
-			"Swimming Pool": false,
-			Parking: false,
-			Elevator: false,
-			WiFi: false,
-			"24-Hour Front Desk": false,
-			Restaurant: false,
+			Boarding: false,
+			Playground: false,
+			Grooming: false,
+			Spa: false,
+			Training: false,
+			"Vet on Call": false,
+			"Pet Walking": false,
 		});
 		refetch();
 	};

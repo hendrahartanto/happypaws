@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBwXCIvg5CmXXUjVsbopH5DvEDUNJBC6e0",
-  authDomain: "travelohi-ef7d8.firebaseapp.com",
-  projectId: "travelohi-ef7d8",
-  storageBucket: "travelohi-ef7d8.appspot.com",
-  messagingSenderId: "607760096310",
-  appId: "1:607760096310:web:dac9666633a303db368c97",
+	apiKey: "AIzaSyAkCnw3EX833QDgsugQr3En2D_Q5RjotOE",
+	authDomain: "happy-paws-ebc62.firebaseapp.com",
+	projectId: "happy-paws-ebc62",
+	storageBucket: "happy-paws-ebc62.appspot.com",
+	messagingSenderId: "232804220805",
+	appId: "1:232804220805:web:f927db6b8a0311b85e8eec",
 };
 
 const app = initializeApp(firebaseConfig);
