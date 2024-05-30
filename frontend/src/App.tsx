@@ -93,7 +93,7 @@ function App() {
 								</MainTempelate>
 							}
 						/>
-						<Route
+						{/* <Route
 							path="/flights"
 							element={
 								<MainTempelate>
@@ -108,7 +108,7 @@ function App() {
 									<FlightDetailPage />
 								</MainTempelate>
 							}
-						/>
+						/> */}
 						<Route
 							path="/mybooking"
 							element={

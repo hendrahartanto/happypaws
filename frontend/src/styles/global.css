@@ -199,13 +199,13 @@ body {
 }
 
 .content {
-	background-color: var(--background-secondary-color);
 }
 
 .page-center {
 	max-width: 1200px;
 	width: 90%;
 	margin: 0 auto;
+	height: 100%;
 }
 
 .unaithorized {

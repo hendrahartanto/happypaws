@@ -2,6 +2,9 @@ import heroDogImage from "../../assets/dog_picture/dog_picture1.png";
 import petGroomingImage from "../../assets/dog_picture/pet_grooming.png";
 import petDayCareImage from "../../assets/dog_picture/pet_daycare.jpeg";
 import petTrainingImage from "../../assets/dog_picture/pet_training.jpeg";
+import subHeroBg from "../../assets/dog_picture/landscape_background_dog.jpeg";
+import ButtonLink from "../../components/ButtonLink";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
 	return (
@@ -50,6 +53,15 @@ const HomePage = () => {
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div className="sub-hero-section">
+				<img src={subHeroBg} alt="" />
+				<div className="content">
+					<div className="title">Find Your Best Pet Hotel</div>
+					<Link to="/hotels" className="button">
+						Find Now
+					</Link>
 				</div>
 			</div>
 		</div>

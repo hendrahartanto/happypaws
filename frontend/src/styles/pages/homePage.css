@@ -45,6 +45,7 @@
 
 .home-page .services-section {
 	padding-bottom: 35px;
+	padding-bottom: 80px;
 }
 
 .home-page .services-section .content {
@@ -103,4 +104,49 @@
 .home-page .services-container .service .title {
 	font-size: 30px;
 	color: var(--primary-text-color);
+}
+
+.home-page .sub-hero-section {
+	position: relative;
+	height: 70vh;
+}
+
+.home-page .sub-hero-section img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* Ensure the image covers the container without distortion */
+	z-index: -1;
+}
+
+.home-page .sub-hero-section .content {
+	padding: 0px 5vw;
+	width: 27%;
+	height: 100%;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.home-page .sub-hero-section .content .title {
+	font-size: 60px;
+	color: white;
+	font-weight: 600;
+	margin-bottom: 25px;
+}
+
+.home-page .sub-hero-section .content .button {
+	background-color: var(--button-secondary-color);
+	color: white;
+	text-decoration: none;
+	padding: 12px 0px;
+	border-radius: 8px;
+	text-align: center;
+	font-size: 15px;
+}
+
+.home-page .sub-hero-section .content .button:hover {
+	background-color: var(--button-secondary-hover-color);
 }

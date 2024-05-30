@@ -64,11 +64,11 @@ const Navbar: React.FC<NavbarProps> = ({ setIsDark, isDark }) => {
 			path: "/mybooking",
 			icon: myticketIcon,
 		},
-		{
-			title: "Flights",
-			path: "/flights",
-			icon: flightIcon,
-		},
+		// {
+		// 	title: "Flights",
+		// 	path: "/flights",
+		// 	icon: flightIcon,
+		// },
 		{
 			title: "Hotels",
 			path: "/hotels",
@@ -198,7 +198,6 @@ const Navbar: React.FC<NavbarProps> = ({ setIsDark, isDark }) => {
 						<Link className="logo" to="/home">
 							Happy Paws
 						</Link>
-						<div>Search Component</div>
 					</div>
 					<div className="right">
 						<NavbarMenu

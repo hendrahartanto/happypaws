@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/Logo/logo_white.png";
+import logo from "../assets/Logo/happy_paws.png";
 import instagramIcon from "../assets/social_media_icon/instagram.png";
 import twitterIcon from "../assets/social_media_icon/twitter.png";
 import youtubeIcon from "../assets/social_media_icon/youtube.png";

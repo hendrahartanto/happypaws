@@ -8,7 +8,6 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import ButtonBlue from "../../components/ButtonBlue";
 import ButtonOrange from "../../components/ButtonOrange";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { postData, updateData } from "../../services/api";
 import { useUser } from "../../contexts/UserContext";
 import FormModal from "../../components/FormModal";
